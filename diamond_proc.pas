@@ -20,13 +20,21 @@ begin
 	writeln
 end;
 
+procedure InputHeight(var height: integer);
 var
-	n, k, h: integer;
+	h: integer;
 begin
 	repeat
 		write('Enter the diamond''s height (positive odd)');
 		readln(h)
 	until (h > 0) and (h mod 2 = 1);
+	height := h
+end;
+
+var
+	n, k, h: integer;
+begin
+	InputHeight(h);
 	n := h div 2;
 	for k := 1 to n + 1 do
 		PrintLineOfDiamond(k, n);
